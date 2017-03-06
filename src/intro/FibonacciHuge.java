@@ -4,19 +4,6 @@ import java.util.*;
 
 public class FibonacciHuge {
     private static long getFibonacciHugeNaive(long n, long m) {
-        /*if (n <= 1)
-            return n;
-
-        long previous = 0;
-        long current  = 1;
-
-        for (long i = 0; i < n - 1; ++i) {
-            long tmp_previous = previous;
-            previous = current;
-            current = ((tmp_previous%m) + (current%m))%m;
-        }
-
-        return current;*/
 
         long[] array = new long[((int) m * 6)+4];
         long periodLength = 0;
@@ -25,15 +12,11 @@ public class FibonacciHuge {
         if (m > 1) {
             array[0] = 0;
             array[1] = 1;
-            //System.out.print("0-1-");
-            for (int i = 2; i <= ((int) m * 6)-1+4; i++) {
+            for (int i = 2; i < array.length; i++) {
                 //array[i] = array[i - 1] + array[i - 2];
-                array[i] = (array[i - 1] + array[i - 2]) % m;
+                array[i] = (array[i - 1]%m + array[i - 2]%m) % m;
                 //System.out.print(array[i]+"-");
             }
-
-            /*for(int i=0;i<=array.length-1;i++)
-                System.out.print(array[i]+"-");*/
 
             for(int i=3;i<=array.length-1-3;i++){
                 //System.out.print(array[i]+"-");
