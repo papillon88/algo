@@ -1,4 +1,4 @@
-package intro;
+package algo_tools.intro;
 
 import java.util.*;
 
