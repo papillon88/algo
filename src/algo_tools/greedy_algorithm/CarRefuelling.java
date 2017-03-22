@@ -1,4 +1,4 @@
-package greedyalgorithm;
+package algo_tools.greedy_algorithm;
 
 /**
  * Created by papillon on 2/15/2017.
