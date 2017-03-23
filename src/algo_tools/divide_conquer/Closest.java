@@ -1,4 +1,4 @@
-//package divideandconquer;
+//package tools.divideandconquer;
 
 import java.io.*;
 import java.util.*;

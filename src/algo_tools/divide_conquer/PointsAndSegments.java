@@ -1,4 +1,4 @@
-package divideandconquer;
+package algo_tools.divide_conquer;
 
 import java.util.*;
 import java.util.function.Function;
