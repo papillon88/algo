@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package algo_tools.dynamic_programming;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by papillon on 2/23/2017.
  */
-public class EditDistance {
+public class EditDistanceSelfImplementation {
 
 
     private static class Node {
@@ -16,10 +16,13 @@ public class EditDistance {
 
     public static void main(String[] args){
 
-        char[] array1 = "editing".toCharArray();
-        char[] array2 = "distance".toCharArray();
-        int colLength = "editing".length()+1;
-        int rowLength = "distance".length()+1;
+        String s1 = "bread";//"editing";
+        String s2 = "really";//"distance";
+
+        char[] array1 = s1.toCharArray();
+        char[] array2 = s2.toCharArray();
+        int colLength = s1.length()+1;
+        int rowLength = s2.length()+1;
 
         int[][] editDistance = new int[colLength][rowLength];
         for(int i=0;i<rowLength;i++)
@@ -33,6 +36,7 @@ public class EditDistance {
                         editDistance[i-1][j]+1,
                         editDistance[i][j-1]+1,
                         array1[i-1]==array2[j-1]? editDistance[i-1][j-1] : editDistance[i-1][j-1]+1
+                        //array1[i-1]==array2[j-1]? editDistance[i-1][j-1] : Integer.MAX_VALUE
                 };
                 Arrays.sort(editDistanceArray);
                 editDistance[i][j]=editDistanceArray[0];
